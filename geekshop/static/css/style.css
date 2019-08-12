@@ -97,14 +97,14 @@ p {
 
 .product-item {
     width: 200px;
-    height: 200px;
+    height: 250px;
     margin: 5px;
-    padding: 15px;
+    padding: 5px;
     outline-style: dotted;
     outline-color: black;
     outline-width: thin;
     float: left;
-}
+ }
 
 .product-item:hover {
     outline-style: solid;
@@ -117,6 +117,15 @@ p {
     height: 200px;
 }
 
+.product-item-link {
+    text-decoration: none;
+}
+.product-caption {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0px;
+}
 .contacts {
     margin-top: 20px;
 }

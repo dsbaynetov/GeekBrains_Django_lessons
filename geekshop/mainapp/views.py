@@ -1,13 +1,21 @@
 from django.shortcuts import render
 
+
 # Create your views here.
 def main(request):
-    return render(request, 'mainapp/index.html')
+    content = {'title': 'Главная', }
+    return render(request, 'mainapp/index.html', context=content)
 
 
 def products(request):
-    return render(request, 'mainapp/products.html')
+    item_products = [
+        {'product':'Huawei Watch GT', 'image': '/static/img/watch-gt.jpg'},
+        {'product':'Samsung Gear S3', 'image': '/static/img/gears3.jpg'},
+    ]
+    content = {'title': 'Каталог', 'products': item_products }
+    return render(request, 'mainapp/products.html', context=content)
 
 
 def contacts(request):
-    return render(request, 'mainapp/contacts.html')
+    content = {'title': 'Контакты', }
+    return render(request, 'mainapp/contacts.html', context=content)
