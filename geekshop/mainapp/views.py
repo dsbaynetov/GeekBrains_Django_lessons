@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import ProductCategory, Product
 
 # Create your views here.
 def main(request):
@@ -8,10 +8,11 @@ def main(request):
 
 
 def products(request):
-    item_products = [
-        {'product':'Huawei Watch GT', 'image': '/static/img/watch-gt.jpg'},
-        {'product':'Samsung Gear S3', 'image': '/static/img/gears3.jpg'},
-    ]
+#    item_products = [
+#        {'product':'Huawei Watch GT', 'image': '/static/img/watch-gt.jpg'},
+#        {'product':'Samsung Gear S3', 'image': '/static/img/gears3.jpg'},
+#    ]
+    item_products = Product.objects.all()[:10]
     content = {'title': 'Каталог', 'products': item_products }
     return render(request, 'mainapp/products.html', context=content)
 

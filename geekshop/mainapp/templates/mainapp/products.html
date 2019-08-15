@@ -17,11 +17,11 @@
     perspiciatis dicta rem laudantium voluptas quo, a at?
 </p>
 
-{% for item in products%}
+{% for product in products%}
 <div class="product-item">
-    <a href="" target="_blank" class="product-item-link">
-        <img src="{{item.image}}" alt="">
-        <p class="product-caption">{{item.product}}</p>
+    <a href="#" target="_blank" class="product-item-link">
+        <img src="/media/{{product.image}}" alt="">
+        <p class="product-caption">{{product.name}}</p>
     </a>
 </div>
 {% endfor %}
