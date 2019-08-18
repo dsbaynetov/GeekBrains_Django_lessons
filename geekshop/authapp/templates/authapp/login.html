@@ -1,0 +1,18 @@
+{% extends 'authapp/base.html' %}
+
+{% block menu-ul %}
+<ul class="menu">
+    <li class="menu-item"><a href="{% url 'auth:login' %}" class="menu-link  menu-link-active">Вход</a></li>
+    <li class="menu-item"><a href="{% url 'auth:register' %}" class="menu-link">Регистрация</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<h1>Вход</h1>
+<form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
+    {% csrf_token %}
+    {{ login_form.as_p }}
+    <br>
+    <input class="form-control" type="submit" value="Вход">
+</form>
+{% endblock %}
