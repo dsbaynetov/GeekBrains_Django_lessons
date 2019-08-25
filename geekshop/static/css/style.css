@@ -101,7 +101,7 @@ p {
 }
 .product-item {
     width: 200px;
-    height: 270px;
+    height: 340px;
     margin: 5px;
     padding: 5px;
     outline-style: dotted;
@@ -130,6 +130,26 @@ p {
     font-weight: 700;
     letter-spacing: 0px;
 }
+
+.button-link {
+    margin-left: 20px;
+    width: 160px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+
+    box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35);
+    border-radius: 23px;
+    background-color: #ffffff;
+    color: #212121;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1.6px;
+    text-align: center;
+}
+
 .contacts {
     margin-top: 20px;
 }
