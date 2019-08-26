@@ -25,6 +25,6 @@
 </li>
 <li class="menu-item">
     <a href="{% url 'basket:view' %}" class="menu-link basket-link">
-    {% if basket %} Корзина :{{ basket|length }} {% endif %}
+    {% if basket %} Корзина:{{ basket.0.total_quantity }}&nbsp;шт. {% endif %}
     </a>
 </li>

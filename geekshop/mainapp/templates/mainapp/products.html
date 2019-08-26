@@ -20,14 +20,31 @@
     perspiciatis dicta rem laudantium voluptas quo, a at?
 </p>
 
+<div class="category-block clearfix">
+    <h3>горячее предложение</h3>
+    <div class="details-slider">
+        <div class="product-item hot-product">
+            <img src="/media/{{ hot_product.image }}" alt="{{ product.short_desc }}" class="product-item-img">
+            <p class="product-caption">{{hot_product.name}}</p>
+            <p class="product-price">{{ hot_product.price }} <span>руб</span></p>
+            <a href="{% url 'basket:add' hot_product.pk %}" class="hot-button-link">Заказать</a>
+        </div>
+    </div>
+    <p class="hot-product-description">
+        <p>
+            {{ hot_product.description }}
+        </p>
+    </div>
+</div>
+
 {% for category in categories %}
 <div class="category-block clearfix">
     <h3>{{category.name}}<br></h3>
     {% for product in products %}
     {% if product.category.name == category.name %}
     <div class="product-item">
-        <a href="#" target="_blank" class="product-item-link">
-            <img src="/media/{{product.image}}" alt="{{ product.short_desc }}">
+        <a href="{% url 'products:product' product.pk %}" target="_blank" class="product-item-link">
+            <img src="/media/{{product.image}}" alt="{{ product.short_desc }}" class="product-item-img">
             <p class="product-caption">{{product.name}}</p>
         </a>
         <a href="{% url 'basket:add' product.pk %}" class="button-link">Добавить</a>

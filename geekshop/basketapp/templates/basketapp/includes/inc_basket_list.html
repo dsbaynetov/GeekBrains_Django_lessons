@@ -1,0 +1,17 @@
+{% for item in basket_items %}
+<div class="basket-item-container">
+    <img src="/media/{{ item.product.image }}" alt="{{ item.product.short_desc }}" class="basket-item-img">
+    <div class="basket-item-details">
+        <div>
+            <p class="category_name">{{ item.product.category.name }}</p>
+        </div>
+        <p class="product-caption">{{ item.product.name }}</p>
+        <span class="product-price">{{ item.product.price }}&nbspруб</span>
+        <input type="number" name="{{ item.pk }}"
+               min="0"
+               value="{{ item.quantity }}">
+        <span class="product_cost">{{ item.cost }}&nbspруб</span>
+        <a href="{% url 'basket:remove' item.pk %}" class="hot-button-link">Удалить</a>
+    </div>
+</div>
+{% endfor %}
