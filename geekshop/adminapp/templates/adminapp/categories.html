@@ -1,0 +1,17 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="products_list">
+    <button>
+        <a href="{% url 'admin_custom:category_create' %}">Новая категория</a>
+    </button>
+    <h1>{{title}}</h1>
+    {% for object in object_list %}
+    <div class="object-list">
+        <div class="object-link">
+            <a href="{% url 'admin_custom:category_details' object.pk %}">{{ object.name|title }}</a>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}

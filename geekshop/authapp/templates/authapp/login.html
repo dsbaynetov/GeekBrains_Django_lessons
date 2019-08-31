@@ -11,6 +11,10 @@
 <h1>Вход</h1>
 <form class="form-horizontal" action="{% url 'auth:login' %}" method="post">
     {% csrf_token %}
+    {% if next %}
+<!-- save next_page -->
+        <input type="hidden" name="next" value="{{ next }}">
+    {% endif %}
     {{ login_form.as_p }}
     <br>
     <input class="form-control" type="submit" value="Вход">

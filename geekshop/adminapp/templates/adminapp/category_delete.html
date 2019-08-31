@@ -1,0 +1,21 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div> Вы уверены, что хотите удалить-[&nbsp;{{ object.name }}&nbsp;?
+
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value={{ button_label }}>
+    </form>
+
+    <button class="btn btn-success">
+        <a href="{% url 'admin_custom:categories' %}">Отмена</a>
+    </button>
+
+</div>
+
+<br>
+<a href="{% url 'admin_custom:categories' %}" class="button-link">Назад к списку</a>
+
+{% endblock %}

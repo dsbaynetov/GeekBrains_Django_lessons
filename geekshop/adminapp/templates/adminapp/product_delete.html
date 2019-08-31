@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<div>Уверены, что хотите удалить {{ object.name }}?
+
+    <form class="form-horizontal" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value={{ button_label }}>
+    </form>
+    <button class="btn btn-success">
+        <a href="{% url 'admin_custom:products_read' %}">Отмена</a>
+    </button>
+</div>
+</body>
+</html>

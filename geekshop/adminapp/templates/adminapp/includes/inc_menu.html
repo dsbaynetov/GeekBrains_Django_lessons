@@ -1,0 +1,25 @@
+<ul class="adminapp-menu">
+    <li>
+        <a href="{% url 'main' %}">Перейти на сайт</a>
+    </li>
+    <li>
+        <a href="{% url 'admin_custom:users'%}">Пользователи</a>
+    </li>
+    <li>
+        <a href="{% url 'admin_custom:products_read'%}">Продукты</a>
+    </li>
+    <li>
+        <a href="{% url 'admin_custom:categories'%}">Категории</a>
+    </li>
+    {% for category_link in categories %}
+<!--    <li>-->
+<!--        <a href="{% url 'admin_custom:products_by_category' category_link.pk %}"-->
+<!--           class="{% if request.resolver_match.kwargs.pk|add:'0' == category_link.pk %}-->
+<!--                        active-->
+<!--                   {% endif %}">-->
+<!--            {{ category_link.name }}-->
+<!--        </a>-->
+<!--    </li>-->
+    {% endfor %}
+    <hr>
+</ul>

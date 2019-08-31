@@ -1,0 +1,18 @@
+{% extends 'adminapp/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="products_list">
+    <button>
+    <a href="{% url 'admin_custom:product_create' %}">Новый продукт</a>
+    </button>
+    <h1>Продукты</h1>
+    {% for object in object_list %}
+    <div class="product_record">
+<!--        <img src="/media/{{object.image|default:'products_images/default.jpg'}}" alt="{{ object.name }}">-->
+        <div class="product_name">
+            <a href="{% url 'admin_custom:product_read' object.pk %}">{{ object.name|title }}</a>
+        </div>
+    </div>
+    {% endfor%}
+</div>
+{% endblock %}
