@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import ProductCategory, Product
 from django.shortcuts import get_object_or_404
-from basketapp.models import Basket
+from basketapp.models import BasketSlot
 
 
 # Create your views here.
@@ -12,7 +12,7 @@ def main(request):
 
 def get_basket(user):
     if user.is_authenticated:
-        return Basket.objects.filter(user=user)
+        return BasketSlot.objects.filter(user=user)
     else:
         return []
 

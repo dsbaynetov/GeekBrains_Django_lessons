@@ -2,7 +2,7 @@ from django.core.management.base import BaseCommand
 from mainapp.models import ProductCategory, Product
 from django.contrib.auth.models import User
 from authapp.models import ShopUser
-
+from geekshop.settings import config
 import json, os
 
 JSON_PATH = 'mainapp/json'
@@ -33,4 +33,7 @@ class Command(BaseCommand):
             new_product.save()
 
         # Создаем суперпользователя при помощи менеджера модели
-        super_user = ShopUser.objects.create_superuser('admin', 'admin@admin.local', 'admin', age=33)
+        admin_name = config.get('admin', 'ADMIN_NAME')
+        admin_mail = config.get('admin', 'ADMIN_EMAIL')
+        admin_pass = config.get('admin', 'ADMIN_PASS')
+        super_user = ShopUser.objects.create_superuser(admin_name, admin_mail, admin_pass, age=33)
